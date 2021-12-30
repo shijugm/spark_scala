@@ -16,6 +16,7 @@ trait SparkSessions {
 
   lazy val sparkSessionBuilder = SparkSession.builder().config(sparkConfig)
 
+  lazy val spark = sparkSessionBuilder.enableHiveSupport().getOrCreate()
 
 
 }
