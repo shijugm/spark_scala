@@ -1,7 +1,7 @@
 package com.org.project.datarepository
 
 import com.org.project.config.{CSVDataStoreConfig, DataUID, JobConfig, ParquetDataStoreConfig}
-import com.org.project.datarepository.DataStoreRepository
+//import com.org.project.datarepository.DataFrameRepositoryConfig
 
 import java.time.LocalDate
 
@@ -9,7 +9,7 @@ object DataRepositoryInitializer {
   def apply(jobConfig: JobConfig, runDate: LocalDate, scenarioId: Option[String]): Unit = {
 
     println("data repository initializer called")
-    DataStoreRepository.add(
+    DataFrameRepositoryConfig.add(
       jobConfig.dataRepositoryConfig.dataStoreConfigs
         .map( {
               case pConfig: ParquetDataStoreConfig =>

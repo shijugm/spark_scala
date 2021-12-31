@@ -1,4 +1,4 @@
-col1,col2,col3
-A,B,C
-A,D,F
-X,Y,Z
+COL1,col2,col3,COL4
+A,B,C,1
+A,D,F,1
+X,Y,Z,1

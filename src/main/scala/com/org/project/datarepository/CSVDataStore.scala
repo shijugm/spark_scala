@@ -8,7 +8,7 @@ class CSVDataStore(
                       val selectColumns : List[String]
                       )
 extends DataStore with SparkSessions{
-  override def read: DataFrame = spark.read.format("csv").load(storePath)
+  override def read: DataFrame = spark.read.format("csv").option("header", "true").load(storePath)
 
   override def write(dataFrame : DataFrame) : Unit = {
     dataFrame.write.format("csv").mode(SaveMode.Overwrite).save(storePath)
