@@ -22,8 +22,9 @@ object CoreLoadJob extends ProjectApplication with JobConfigLoader {
   println("count =+=+= " + DataFrameRepositoryConfig.count())
   println("test ")
 
-//  println(DataStoreRepository.get(DataUID("curated" , "account_dim")).get )
 //  println("Execute job")
+
+  // to be moved to a shared file. This is needed to set the pipeline as a collection.
   val NIL = scala.collection.immutable.Nil
 
   val enrichPipeline = Pipeline(
