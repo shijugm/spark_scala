@@ -12,7 +12,7 @@ extends DataStore with SparkSessions{
   override def read: DataFrame = spark.read.format("parquet").load(storePath)
 
   override def write(dataFrame : DataFrame) : Unit = {
-    dataFrame.write.format("parquet").mode(SaveMode.Overwrite).save(storePath)
+    dataFrame.write.format("parquet").option("compression","none").mode(SaveMode.Overwrite).save(storePath)
   }
 
 }

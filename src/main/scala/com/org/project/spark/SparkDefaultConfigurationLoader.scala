@@ -3,7 +3,8 @@ package com.org.project.spark
 import com.typesafe.config.{ConfigFactory, ConfigRenderOptions}
 //
 //import scala.collection.convert.ImplicitConversions.`set asScala`
-import scala.jdk.CollectionConverters._
+//import scala.jdk.CollectionConverters._
+import scala.collection.JavaConverters._
 
 object SparkDefaultConfigurationLoader {
   println("inside Sparkdefaultconfigloader")

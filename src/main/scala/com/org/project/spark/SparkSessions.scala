@@ -14,9 +14,9 @@ trait SparkSessions {
     .setAppName(appName.getOrElse(SparkDefaultConfigurationLoader.appName))
     .setAll(defaultConfiguration ++ sparkOptions)
 
-  lazy val sparkSessionBuilder = SparkSession.builder().config(sparkConfig)
+//  lazy val sparkSessionBuilder = SparkSession.builder().config(sparkConfig)
 
-  lazy val spark = sparkSessionBuilder.enableHiveSupport().getOrCreate()
+//  lazy val spark = sparkSessionBuilder.master("local").getOrCreate()
 
-
+    lazy val spark = SparkSession.builder().appName("test").master("local").getOrCreate()
 }
