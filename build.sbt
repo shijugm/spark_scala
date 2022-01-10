@@ -10,8 +10,11 @@ libraryDependencies += "org.apache.spark" %% "spark-core" % sparkVersion % "prov
 libraryDependencies += "org.apache.spark" %% "spark-sql" % sparkVersion % "provided"
 libraryDependencies += "org.apache.spark" %% "spark-hive" % sparkVersion % "provided"
 
-
+//Pureconfig for loading the config file
 libraryDependencies += "com.github.pureconfig" %% "pureconfig" % "0.12.1"
+
+//scopt for commandline argument parsing
+libraryDependencies += "com.github.scopt" %% "scopt" % "3.7.1"
 
 
 assemblyMergeStrategy in assembly := {

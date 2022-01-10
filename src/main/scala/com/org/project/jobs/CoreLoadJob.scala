@@ -13,16 +13,18 @@ class CoreLoadJob() {
 
 //object CoreLoadJob extends ProjectApplication with JobConfigLoader with SparkSessions{
 object CoreLoadJob extends ProjectApplication with JobConfigLoader {
-  println("Core load job loading config ")
+
+//  Read arguments passed with the command
+  override val argumentList: Option[Array[String]] =  Some(args)
+
+
   println(jobConfig)
 
-//  println("Initialize the DataRepository")
+  println("Initialize the DataRepository")
   DataRepositoryInitializer(jobConfig, runDate , None)
 
   println("count =+=+= " + DataFrameRepositoryConfig.count())
-  println("test ")
 
-//  println("Execute job")
 
   // to be moved to a shared file. This is needed to set the pipeline as a collection.
   val NIL = scala.collection.immutable.Nil
@@ -37,7 +39,7 @@ object CoreLoadJob extends ProjectApplication with JobConfigLoader {
   val enrichedDf = enrichPipeline.execute(DataFrameRepositoryConfig.get(DataUID("staging" , "account_dim")).get.read)
   println("finished read")
   println(enrichedDf.show())
-
+//
   DataFrameRepositoryConfig.get(DataUID("conformed" , "account_dim")).get.write(enrichedDf)
 
   println("Done")

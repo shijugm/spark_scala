@@ -1,6 +1,6 @@
 package com.org.project.config
 
-import com.org.project.config.DataUID
+//import com.org.project.config.DataUID
 
 case class JobConfig(jobName : String,
                      dataRepositoryConfig: DataRepositoryConfig,
